@@ -1,22 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import Cell from './Cell'
 
 function App() {
+
+  // function deliverCells () {
+    // for (let i = 0; i < )
+  // }
+
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Cell color="red" palette="white" />
+        <Cell color="red" palette="white" />
+        <Cell color="red" palette="white" />
+        <Cell color="red" palette="white" />
+        <Cell color="red" palette="white" />
+        <Cell color="red" palette="white" />
+        <Cell color="red" palette="white" />
+        <Cell color="red" palette="white" />
+        <Cell color="red" palette="white" />
+        <Cell color="red" palette="white" />
       </header>
     </div>
   );
