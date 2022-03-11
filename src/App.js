@@ -5,13 +5,9 @@ import uuid from 'react-uuid'
 
 function App() {
 
-  const [numOfRows, setNumOfRows] = useState(25)
-  const [numOfColumns, setNumOfColumns] = useState(25)
+  const [numOfRows, setNumOfRows] = useState(50)
+  const [numOfColumns, setNumOfColumns] = useState(50)
   const [paletteColor, setPaletteColor] = useState("red")
-
-  function handleChangeRows () {
-
-  }
 
   function returnRows() {
     const arrayOfRows = []
@@ -37,8 +33,22 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div>
-          <input type="text" />
-          <button>Change Rows</button>
+          <h4>Choose # of Rows (max 150)</h4>
+          <input onChange={e => {
+            e.target.value < 150 ?
+            setNumOfRows(e.target.value) :
+            setNumOfRows(150)
+            }
+          } type="text" />
+        </div>
+        <div>
+          <h4>Choose # of Columns (max 150)</h4>
+          <input onChange={e => {
+            e.target.value < 150 ? 
+            setNumOfColumns(e.target.value) : 
+            setNumOfColumns(150) 
+            }
+          } type="text" />
         </div>
         <div>
           <h4>Pick Palette Color</h4>

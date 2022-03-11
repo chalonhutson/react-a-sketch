@@ -10,7 +10,7 @@ export default function Cell({ color, palette }) {
     } 
   
     return (
-    <div style={{backgroundColor: cellColor, width: '10px', height: '10px'}} onMouseEnter={() => switchColor()} >
+    <div style={{backgroundColor: cellColor, width: '5px', height: '5px'}} onMouseEnter={() => switchColor()} >
         
     </div>
   )
