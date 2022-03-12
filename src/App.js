@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import './App.css';
 import Cell from './Cell'
-import uuid from 'react-uuid'
 
 function App() {
 
@@ -9,28 +8,31 @@ function App() {
   const [numOfColumns, setNumOfColumns] = useState(50)
   const [paletteColor, setPaletteColor] = useState("red")
   
-  const [rowsUserInput, setRowsUserInput] = useState()
-  const [columnsUserInput, setColumnsUserInput] = useState()
+  const [rowsUserInput, setRowsUserInput] = useState(null)
+  const [columnsUserInput, setColumnsUserInput] = useState(null)
 
-  function returnRows() {
+  function returnRows(columnKey) {
+    console.log("return rows")
     const arrayOfRows = []
     for (let i = 0; i < numOfRows; i++) {
-      arrayOfRows.push(<Cell key={uuid()} color="white" palette={paletteColor} />)
+      arrayOfRows.push(<Cell key={`Column ${columnKey} Row ${i}`} color="white" paletteColor={paletteColor} />)
     }
     return arrayOfRows
   }
 
   function returnColumns () {
+    console.log("return columns")
     const arrayOfColumns = []
     for (let i = 0; i < numOfColumns; i++) {
       arrayOfColumns.push(
-        <div className="cellRow">
-          {returnRows()}
+        <div key={`Column ${i}`} className="cellRow">
+          {returnRows(i)}
         </div>
       )
     }
     return arrayOfColumns
   }
+
 
   return (
     <div className="App">
