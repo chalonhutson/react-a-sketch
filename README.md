@@ -1,4 +1,4 @@
-# Welcome to my React Project!
+# Welcome to my React-a-Sketch!
 
 ## Steps
 
